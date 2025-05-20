@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سایت آزمایشی</title>
     <style>
-        body {
+        body{
             font-family: Arial, sans-serif;
             margin: 0;
             direction: rtl;
@@ -11,7 +11,6 @@
             background-size: 400% 400%;
             animation: gradientShift 20s ease infinite;
         }
-
         @keyframes gradientShift {
             0% {
                 background-position: 0% 50%;
@@ -23,30 +22,30 @@
                 background-position: 0% 50%;
             }
         }
-
-        .peresent, .hadsAdad {
+         .peresent {
             position: absolute;
             background: rgba(255, 255, 255, 0.691);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             border-radius: 30px;
             text-align: center;
             padding: 20px;
-        }
-
-        .peresent {
             top: 30px;
             left: 600px;
             width: 650px;
             height: auto;
         }
-
         .hadsAdad {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.691);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            text-align: center;
+            padding: 20px;
             top: 30px;
             left: 55px;
             width: 450px;
             height: auto;
         }
-
         input {
             font-size: 15px;
             color: rgb(0, 150, 0);
@@ -56,7 +55,6 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-
         #buttongreen {
             background-color: rgb(0, 150, 0);
             color: white;
@@ -66,37 +64,33 @@
             cursor: pointer;
             border-radius: 5px;
         }
-
-        /* ==== نسخه ویژه موبایل ==== */
         @media screen and (max-width: 768px) {
-            .peresent, .hadsAdad {
+            .peresent {
                 position: static;
                 width: 90%;
                 margin: 20px auto;
                 border-radius: 20px;
                 padding: 15px;
-            }
-
-            .peresent {
                 background-color: #ffffffee;
                 box-shadow: 0 0 15px rgba(0, 150, 0, 0.3);
             }
-
             .hadsAdad {
+                position: static;
+                width: 90%;
+                margin: 20px auto;
+                border-radius: 20px;
+                padding: 15px;
                 background-color: #ffffffdd;
                 box-shadow: 0 0 15px rgba(0, 0, 200, 0.2);
             }
-
             h1, h2, h3, h4 {
                 font-size: 90%;
             }
-
             input {
                 width: 100%;
                 font-size: 16px;
                 margin-bottom: 10px;
             }
-
             #buttongreen {
                 width: 100%;
                 padding: 10px;
@@ -104,9 +98,9 @@
             }
         }
     </style>
-</head>
+</head>>
 <body>
-     <div class="peresent">
+    <div class="peresent">
         <h1>سلام دوست من</h1>
         <h2>به سایت آزمایشی من خوش اومدی</h2>
         <h3>من حسین نمازی هستم و این سایت با HTML و CSS ساخته شده</h3>
@@ -118,23 +112,23 @@
         <h2>بازی حدس عدد</h2>
         <h4>یک عدد از 1 تا 1000 انتخاب شده</h4>
         <h4>با تست اعداد مختلف سعی کن عدد درست رو پیدا کنی</h4>
-        <input id="x" placeholder="عدد رو وارد کن">
         <button onclick="checkNum()" id="buttongreen">تست عدد</button>
+        <input id="x" placeholder="عد را به لاتین وارد کنید">
         <p id="output"></p>
     </div>
     <script>
-        let secretNumber = Math.floor(Math.random() * 1000) + 1;
+        let secretNumber = Number(Math.floor(Math.random() * 1000) + 1);
 
         function checkNum() {
             let userNumber = Number(document.getElementById("x").value);
             let outputMessage = document.getElementById("output");
 
             if (userNumber === secretNumber) {
-                outputMessage.textContent = "🎉 درست حدس زدی!";
+                outputMessage.textContent = "😂چه عجب درست زدی";
             } else if (userNumber > secretNumber) {
-                outputMessage.textContent = "😳 زیادیه! یه عدد کوچیک‌تر امتحان کن.";
+                outputMessage.textContent = "😳حاجی چخبرته!";
             } else if (userNumber < secretNumber) {
-                outputMessage.textContent = "🤔 کمه! یه عدد بزرگ‌تر بزن.";
+                outputMessage.textContent = "🤦‍♂️ناموسا خیلی کمه";
             }
         }
     </script>
