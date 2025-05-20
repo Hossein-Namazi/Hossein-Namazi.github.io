@@ -5,70 +5,46 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #dcfeff;
             margin: 0;
             direction: rtl;
+            background: linear-gradient(135deg, #ffffff, #91ffa9, hsl(184, 100%, 50%));
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .peresent, .hadsAdad {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            text-align: center;
+            padding: 20px;
         }
 
         .peresent {
-            position: absolute;
             top: 30px;
             left: 600px;
             width: 650px;
-            height: 400px;
-            background: rgb(255, 255, 255);
-            box-shadow: 0 0 20px rgb(0, 200, 0);
-            margin: 30px auto;
-            padding: 10px;
-            max-height: 350px;
-            border-radius: 30px;
-            text-align: center;
+            height: auto;
         }
 
         .hadsAdad {
-            position: absolute;
             top: 30px;
             left: 55px;
             width: 450px;
-            height: 250px;
-            background: rgb(255, 255, 255);
-            box-shadow: 0 0 20px rgb(0, 200, 0);
-            margin: 30px auto;
-            padding: 10px;
-            max-width: 450px;
-            max-height: 450px;
-            border-radius: 30px;
-            text-align: center;
-        }
-
-        #buttonGreen, #buttongreen {
-            background-color: rgb(0, 150, 0);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        #buttonRed {
-            background-color: rgb(200, 0, 0);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        #buttonBlue {
-            background-color: rgb(0, 0, 200);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
+            height: auto;
         }
 
         input {
@@ -76,33 +52,55 @@
             color: rgb(0, 150, 0);
             text-align: center;
             font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
 
-        /* --- Responsive برای گوشی‌ها --- */
+        #buttongreen {
+            background-color: rgb(0, 150, 0);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* ==== نسخه ویژه موبایل ==== */
         @media screen and (max-width: 768px) {
             .peresent, .hadsAdad {
                 position: static;
-                width: 100%;
-                height: auto; /* ارتفاع خودکار، براساس محتوا تنظیم میشه */
+                width: 90%;
                 margin: 20px auto;
-                box-sizing: border-box;
+                border-radius: 20px;
+                padding: 15px;
             }
 
             .peresent {
-                padding: 20px; /* کمی padding اضافه برای فضای بیشتر */
-                margin-bottom: 20px; /* فاصله پایین‌تر */
+                background-color: #ffffffee;
+                box-shadow: 0 0 15px rgba(0, 150, 0, 0.3);
+            }
+
+            .hadsAdad {
+                background-color: #ffffffdd;
+                box-shadow: 0 0 15px rgba(0, 0, 200, 0.2);
+            }
+
+            h1, h2, h3, h4 {
+                font-size: 90%;
             }
 
             input {
-                width: 80%;
-                padding: 5px;
+                width: 100%;
                 font-size: 16px;
+                margin-bottom: 10px;
             }
 
-            #buttonGreen, #buttongreen {
-                font-size: 16px;
-                padding: 5px 15px;
-                margin-top: 10px;
+            #buttongreen {
+                width: 100%;
+                padding: 10px;
+                font-size: 18px;
             }
         }
     </style>
@@ -110,10 +108,9 @@
 <body>
     <div class="hadsAdad">
         <h2>بازی حدس عدد</h2>
-        <h4>این یک بازیه که توش سیستم یک عدد تصادفی از بین 1 تا 1000 انتخاب میکنه</h4>
-        <h4>و حالا شما باید با تست کردن اعداد مختلف اون عدد رو پیدا کنید</h4>
-        <h4>اینجا میتونی اعداد رو وارد کنی</h4>
-        <input id="x" placeholder="1-100">
+        <h4>یک عدد از 1 تا 1000 انتخاب شده</h4>
+        <h4>با تست اعداد مختلف سعی کن عدد درست رو پیدا کنی</h4>
+        <input id="x" placeholder="عدد رو وارد کن">
         <button onclick="checkNum()" id="buttongreen">تست عدد</button>
         <p id="output"></p>
     </div>
@@ -121,11 +118,10 @@
     <div class="peresent">
         <h1>سلام دوست من</h1>
         <h2>به سایت آزمایشی من خوش اومدی</h2>
-        <h3>این سایت من ساختم ینی حسین نمازی</h3>
-        <h3>این بیشتر یک سایت آزمایشی که از هاست و دامین گیت هاب استفاده شده برای انتشارش</h3>
-        <h3>من این سایت با زبان های برنامه نویسی html و css ساختم</h3>
-        <h3>توی این سایت تعدادی سرگرمی از جمله بازی یا نرم افزار های ساده هست</h3>
-        <h3>ممنون میشم تستشون کنی</h3>
+        <h3>من حسین نمازی هستم و این سایت با HTML و CSS ساخته شده</h3>
+        <h3>از GitHub برای انتشارش استفاده کردم</h3>
+        <h3>اینجا چند تا بازی ساده و سرگرمی گذاشتم</h3>
+        <h3>خوشحال می‌شم امتحانشون کنی</h3>
     </div>
 
     <script>
@@ -134,13 +130,13 @@
         function checkNum() {
             let userNumber = Number(document.getElementById("x").value);
             let outputMessage = document.getElementById("output");
-            
+
             if (userNumber === secretNumber) {
-                outputMessage.textContent = "😂 چه عجب درست حدس زدی!";
+                outputMessage.textContent = "🎉 درست حدس زدی!";
             } else if (userNumber > secretNumber) {
-                outputMessage.textContent = "😳 چخبرته حاجی؟ خیلی زیاد زدی!";
+                outputMessage.textContent = "😳 زیادیه! یه عدد کوچیک‌تر امتحان کن.";
             } else if (userNumber < secretNumber) {
-                outputMessage.textContent = "🤦‍♂️ ناموسا خیلی کمه، یه عدد بزرگ‌تر بزن!";
+                outputMessage.textContent = "🤔 کمه! یه عدد بزرگ‌تر بزن.";
             }
         }
     </script>
