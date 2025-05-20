@@ -1,83 +1,85 @@
 <html><title>سایت آزمایشی</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        body
+        {
+            font-family: Arial, sans-serif;
+            background-color: #dcfeff;
+            margin: 0;
+            direction: rtl;
+        }
 
-<style>
-    
-    body
-    {
-        font-family: Arial, sans-serif;
-        background-color: #dcfeff;
-        margin: 0;
-        direction: rtl;
-    }
+        .peresent
+        {
+            position: absolute; /* یا fixed اگر بخواهید همیشه در همان نقطه بماند */
+            top: 30;
+            left: 600;
+            width: 650px;
+            height: 400px;
 
-    .peresent
-    {
-        position: absolute; /* یا fixed اگر بخواهید همیشه در همان نقطه بماند */
-        top: 30;
-        left: 600;
-        width: 650px;
-        height: 400px;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 0 20px rgb(0, 200, 0);
+            margin: 30px auto;
+            padding: 10px;
+            max-height: 350px;
+            border-radius: 30px;
+            text-align: center;
+        }
 
-        background: rgb(255, 255, 255);
-        box-shadow: 0 0 20px rgb(0, 200, 0);
-        margin: 30px auto;
-        padding: 10px;
-        max-height: 350px;
-        border-radius: 30px;
-        text-align: center;
-    }
+        .hadsAdad{
+            position: absolute; /* یا fixed اگر بخواهید همیشه در همان نقطه بماند */
+            top: 30;
+            left: 55 ;
+            width: 450px;
+            height: 250px;
 
-    .hadsAdad{
-        position: absolute; /* یا fixed اگر بخواهید همیشه در همان نقطه بماند */
-        top: 30;
-        left: 55 ;
-        width: 450px;
-        height: 250px;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 0 20px rgb(0, 200, 0);
+            margin: 30px auto;
+            padding: 10px;
+            max-width: 450px;
+            max-height: 450px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        #buttonGreen{
+            background-color: rgb(0, 150, 0);
+            color: white;
+            border: none;
+            padding: 2px 7px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #buttonRed {
+            background-color: rgb(200, 0, 0);
+            color: white;
+            border: none;
+            padding: 2px 7px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #buttonBlue {
+            background-color: rgb(0, 0, 200);
+            color: white;
+            border: none;
+            padding: 2px 7px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input {
+            font-size: 15px;
+            color: rgb(0, 150, 0);
+            text-align: center;
+            font-weight: bold;
+        }
 
-        background: rgb(255, 255, 255);
-        box-shadow: 0 0 20px rgb(0, 200, 0);
-        margin: 30px auto;
-        padding: 10px;
-        max-width: 450px;
-        max-height: 450px;
-        border-radius: 30px;
-        text-align: center;
-    }
-    #buttonGreen{
-        background-color: rgb(0, 150, 0);
-        color: white;
-        border: none;
-        padding: 2px 7px;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    #buttonRed {
-        background-color: rgb(200, 0, 0);
-        color: white;
-        border: none;
-        padding: 2px 7px;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    #buttonBlue {
-        background-color: rgb(0, 0, 200);
-        color: white;
-        border: none;
-        padding: 2px 7px;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    input {
-        font-size: 15px;
-        color: rgb(0, 150, 0);
-        text-align: center;
-        font-weight: bold;
-    }
-
-</style>
+    </style>
+</head>
 <body>
     <div class="hadsAdad">
         <h2>بازی حدس عدد</h2>
@@ -120,10 +122,5 @@
             outputMessage.textContent = "🤦‍♂️ ناموسا خیلی کمه، یه عدد بزرگ‌تر بزن!";
         }
     }
-
-
 </script>
-
-
-
 </html>
