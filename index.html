@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت آزمایشی - سلام به کاربر</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            direction: rtl;
+        }
+
+        .intro-container {
+            background: white;
+            padding: 30px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .greet-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            margin: 30px auto;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            min-height: 27px;
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-container">
+        <h1>سایت آزمایشی</h1>
+        <p>این سایت توسط حسین نمازی ایجاد شده است.</p>
+        <p>هدف این صفحه، تست انتشار سایت روی گیت‌هاب است.</p>
+        <p>با انتشار صفحات روی GitHub Pages، می‌توان نسخه‌ی آنلاین پروژه‌ها را به سادگی در دسترس قرار داد.</p>
+    </div>
+
+    <div class="greet-container">
+        <h1>سلام به کاربر</h1>
+        <p>لطفا نام خود را وارد کنید:</p>
+        <input type="text" id="nameInput" placeholder="نام شما...">
+        <button onclick="checkName()">تایید</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkName() {
+            const name = document.getElementById('nameInput').value;
+            const resultDiv = document.getElementById('result');
+
+            if (name.trim() === "حسین") {
+                resultDiv.textContent = "سلام حسین";
+                resultDiv.style.color = "#4CAF50";
+            } else if (name.trim() === "") {
+                resultDiv.textContent = "لطفا نام خود را وارد کنید";
+                resultDiv.style.color = "#f44336";
+            } else {
+                resultDiv.textContent = "سلام " + name;
+                resultDiv.style.color = "#333";
+            }
+        }
+
+        // اضافه کردن قابلیت فشار دادن دکمه Enter
+        document.getElementById('nameInput').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                checkName();
+            }
+        });
+    </script>
+</body>
+</html>
