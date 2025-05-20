@@ -1,134 +1,122 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سایت آزمایشی</title>
     <style>
-        
-        body
-        {
+        body {
             font-family: Arial, sans-serif;
             background-color: #dcfeff;
             margin: 0;
             direction: rtl;
-        }
-
-        .peresent
-        {
-            position: absolute; /* یا fixed اگر بخواهید همیشه در همان نقطه بماند */
-            top: 30;
-            left: 600;
-            width: 650px;
-            height: 400px;
-
-            background: rgb(255, 255, 255);
-            box-shadow: 0 0 20px rgb(0, 200, 0);
-            margin: 30px auto;
-            padding: 10px;
-            max-height: 350px;
-            border-radius: 30px;
             text-align: center;
         }
 
-        .hadsAdad{
-            position: absolute; /* یا fixed اگر بخواهید همیشه در همان نقطه بماند */
-            top: 30;
-            left: 55 ;
-            width: 450px;
-            height: 250px;
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
 
-            background: rgb(255, 255, 255);
-            box-shadow: 0 0 20px rgb(0, 200, 0);
-            margin: 30px auto;
-            padding: 10px;
+        .hadsAdad {
+            width: 90%;
             max-width: 450px;
-            max-height: 450px;
+            background: white;
+            box-shadow: 0 0 20px rgb(0, 200, 0);
+            padding: 20px;
             border-radius: 30px;
-            text-align: center;
+            margin-bottom: 20px;
         }
-        #buttonGreen{
+
+        .peresent {
+            width: 90%;
+            max-width: 650px;
+            background: white;
+            box-shadow: 0 0 20px rgb(0, 200, 0);
+            padding: 20px;
+            border-radius: 30px;
+        }
+
+        button {
             background-color: rgb(0, 150, 0);
             color: white;
             border: none;
-            padding: 2px 7px;
+            padding: 5px 10px;
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
+            margin-top: 10px;
         }
-        #buttonRed {
-            background-color: rgb(200, 0, 0);
-            color: white;
-            border: none;
-            padding: 2px 7px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #buttonBlue {
-            background-color: rgb(0, 0, 200);
-            color: white;
-            border: none;
-            padding: 2px 7px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+
         input {
             font-size: 15px;
             color: rgb(0, 150, 0);
             text-align: center;
             font-weight: bold;
+            width: 80%;
+            padding: 5px;
+            border-radius: 5px;
         }
 
+        @media screen and (max-width: 600px) {
+            .hadsAdad, .peresent {
+                width: 95%;
+            }
+
+            h1, h2, h3 {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 3px 7px;
+            }
+
+            input {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="hadsAdad">
-        <h2>بازی حدس عدد</h2>
-        <h4>این یک بازیه که توش سیستم یک عدد تصادفی از بین 1 تا 1000 انتخاب میکنه</h4>
-        <h4>و حالا شما باید با تست کردن اعداد مختلف اون عدد رو پیدا کنید</h4>
-        <h4>اینجا میتونی اعداد رو وارد کنی</h4>
-        <input id="x" placeholder="1-100">
-        <button onclick="checkNum()" id="buttongreen">تست عدد</button>
-        <p id="output"></p> <!-- اضافه کردن این خط -->
+    <div class="container">
+        <div class="hadsAdad">
+            <h2>بازی حدس عدد</h2>
+            <h4>سیستم یک عدد تصادفی از 1 تا 1000 انتخاب می‌کند.</h4>
+            <h4>شما باید با تست کردن اعداد، آن را پیدا کنید.</h4>
+            <input id="x" placeholder="1-100">
+            <button onclick="checkNum()">تست عدد</button>
+            <p id="output"></p>
+        </div>
+
+        <div class="peresent">
+            <h1>سلام دوست من</h1>
+            <h2>به سایت آزمایشی من خوش آمدی</h2>
+            <h3>این سایت توسط حسین نمازی ساخته شده.</h3>
+            <h3>برای انتشار از هاست و دامنه گیت‌هاب استفاده شده.</h3>
+            <h3>با زبان‌های HTML و CSS ساخته شده است.</h3>
+            <h3>در این سایت چند بازی و نرم‌افزار ساده وجود دارد.</h3>
+            <h3>ممنون می‌شوم که تستشان کنی!</h3>
+        </div>
     </div>
 
-    <div class="peresent">
-        <h1>سلام دوست من</h1>
-        <h2>به سایت آزمایشی من خوش اومدی</h2>
-        <h3>این سایت من ساختم ینی حسین نمازی</h3>
-        <h3>این بیشتر یک سایت آزمایشی که از هاست و دامین گیت هاب استفاده شده  برای انتشارش</h3>
-        <h3>من این سایت با زبان های برنامه نویسی html و css ساختم</h3>
-        <h3>توی این سایت تعدادی سرگرمی از جمله بازی یا نرم افزار های ساده هست</h3>
-        <h3>ممنون میشم تستشون کنی</h3>
-    </div>
-    
-</body>
-<script>
-    let secretNumber = Math.floor(Math.random() * 1000) + 1; // عدد تصادفی بین ۱ تا ۱۰۰
+    <script>
+        let secretNumber = Math.floor(Math.random() * 1000) + 1;
 
-    function checkNum() {
-        let userNumber = Number(document.getElementById("x").value); // گرفتن عدد از ورودی
-        let outputMessage = document.getElementById("output");
-        // outputMessage.style.color = "blue";
-        if (userNumber === secretNumber) 
-        {
-            outputMessage.textContent = "😂 چه عجب درست حدس زدی!";
-        } 
-        if (userNumber > secretNumber) 
-        {
-            outputMessage.textContent = "😳 چخبرته حاجی؟ خیلی زیاد زدی!";
-        } 
-        if (userNumber < secretNumber) 
-        {
-            outputMessage.textContent = "🤦‍♂️ ناموسا خیلی کمه، یه عدد بزرگ‌تر بزن!";
+        function checkNum() {
+            let userNumber = Number(document.getElementById("x").value);
+            let outputMessage = document.getElementById("output");
+
+            if (userNumber === secretNumber) {
+                outputMessage.textContent = "😂 چه عجب درست حدس زدی!";
+            } else if (userNumber > secretNumber) {
+                outputMessage.textContent = "😳 خیلی زیاد زدی!";
+            } else {
+                outputMessage.textContent = "🤦‍♂️ عدد بزرگ‌تر وارد کن!";
+            }
         }
-    }
-
-
-</script>
-
-
-
+    </script>
+</body>
 </html>
