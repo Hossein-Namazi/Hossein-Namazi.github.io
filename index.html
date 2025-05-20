@@ -7,9 +7,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             direction: rtl;
-            background: linear-gradient(135deg, #ffffff, #91ffa9, hsl(184, 100%, 50%));
+            background: linear-gradient(135deg, #00d9ff, #58ff7c, #00d9ff, #58ff7c, #00d9ff);
             background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
+            animation: gradientShift 20s ease infinite;
         }
 
         @keyframes gradientShift {
@@ -26,7 +26,7 @@
 
         .peresent, .hadsAdad {
             position: absolute;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.796);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             border-radius: 30px;
             text-align: center;
@@ -106,6 +106,14 @@
     </style>
 </head>
 <body>
+     <div class="peresent">
+        <h1>سلام دوست من</h1>
+        <h2>به سایت آزمایشی من خوش اومدی</h2>
+        <h3>من حسین نمازی هستم و این سایت با HTML و CSS ساخته شده</h3>
+        <h3>از GitHub برای انتشارش استفاده کردم</h3>
+        <h3>اینجا چند تا بازی ساده و سرگرمی گذاشتم</h3>
+        <h3>خوشحال می‌شم امتحانشون کنی</h3>
+    </div>
     <div class="hadsAdad">
         <h2>بازی حدس عدد</h2>
         <h4>یک عدد از 1 تا 1000 انتخاب شده</h4>
@@ -114,16 +122,6 @@
         <button onclick="checkNum()" id="buttongreen">تست عدد</button>
         <p id="output"></p>
     </div>
-
-    <div class="peresent">
-        <h1>سلام دوست من</h1>
-        <h2>به سایت آزمایشی من خوش اومدی</h2>
-        <h3>من حسین نمازی هستم و این سایت با HTML و CSS ساخته شده</h3>
-        <h3>از GitHub برای انتشارش استفاده کردم</h3>
-        <h3>اینجا چند تا بازی ساده و سرگرمی گذاشتم</h3>
-        <h3>خوشحال می‌شم امتحانشون کنی</h3>
-    </div>
-
     <script>
         let secretNumber = Math.floor(Math.random() * 1000) + 1;
 
