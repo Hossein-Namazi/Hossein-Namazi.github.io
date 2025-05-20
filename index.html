@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سایت آزمایشی - سلام به کاربر</title>
- 
+    <style>
+        body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             direction: rtl;
         }
-
+        
         .intro-container {
             background: white;
             padding: 30px;
@@ -20,7 +21,7 @@
             max-width: 800px;
             text-align: center;
         }
-
+        
         .greet-container {
             background-color: white;
             padding: 30px;
@@ -30,12 +31,12 @@
             width: 300px;
             margin: 30px auto;
         }
-
+        
         h1 {
             color: #333;
             margin-bottom: 20px;
         }
-
+        
         input {
             width: 100%;
             padding: 10px;
@@ -44,7 +45,7 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-
+        
         button {
             background-color: #4CAF50;
             color: white;
@@ -55,11 +56,11 @@
             font-size: 16px;
             margin-top: 10px;
         }
-
-            button:hover {
-                background-color: #45a049;
-            }
-
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
         #result {
             margin-top: 20px;
             font-size: 18px;
@@ -88,7 +89,7 @@
         function checkName() {
             const name = document.getElementById('nameInput').value;
             const resultDiv = document.getElementById('result');
-
+            
             if (name.trim() === "حسین") {
                 resultDiv.textContent = "سلام حسین";
                 resultDiv.style.color = "#4CAF50";
@@ -100,7 +101,7 @@
                 resultDiv.style.color = "#333";
             }
         }
-
+        
         // اضافه کردن قابلیت فشار دادن دکمه Enter
         document.getElementById('nameInput').addEventListener('keyup', function(event) {
             if (event.key === 'Enter') {
