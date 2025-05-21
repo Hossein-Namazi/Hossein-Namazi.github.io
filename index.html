@@ -37,7 +37,7 @@
             height: auto;
         }
         .hadsAdad {
-            top: 75px;
+            top: 30px;
             left: 70px;
             width: auto;
             height: auto;
@@ -136,6 +136,7 @@
         <button onclick="checkNum()" id="buttongreen">تست عدد</button>
         <input id="x" placeholder="عدد را به لاتین وارد کنید">
         <p id="output"></p>
+        <p id="shans"><span dir="ltr" style="font-size: 18px;">10 :شانس باقیمانده</span></p>
     </div>
     <div class="XO">
         <h3><span dir="ltr">XO</span> (دو نفره)</h3>
@@ -153,26 +154,42 @@
     </div>
     <script>
         let secretNumber = Number(Math.floor(Math.random() * 1000) + 1);
+        let countShans = 10;
+        function checkNum() {
+            let userNumber = Number(document.getElementById("x").value);
+            let outputMessage = document.getElementById("output");
+            let outputShans = document.getElementById("shans");
+            if (countShans > 0)
+            {
+                if (userNumber === secretNumber) 
+                {
+                    outputMessage.textContent = "😂چه عجب درست زدی";
+                }
+                else if (userNumber > secretNumber) 
+                {
+                    outputMessage.textContent = "😳حاجی چخبرته!";
+                }
+                else if (userNumber < secretNumber) 
+                {
+                    outputMessage.textContent = "🤦‍♂️ناموسا خیلی کمه";
+                }
+                else if (countShans <= 0)
+                {
+                    outputMessage.textContent = "باید عدد: " + secretNumber + "رو انتخاب میکردی";
+                }
+                --countShans;
+                outputShans.style.fontSize = 18;
+                outputShans.textContent = "شانس باقیمانده: " + countShans;
+            }
+            
+        }
+
         let countXO = 0;
         let board = [
             ["1", "2", "3"],
             ["4", "5", "6"],
             ["7", "8", "9"]
         ];
-
-
-        function checkNum() {
-            let userNumber = Number(document.getElementById("x").value);
-            let outputMessage = document.getElementById("output");
-
-            if (userNumber === secretNumber) {
-                outputMessage.textContent = "😂چه عجب درست زدی";
-            } else if (userNumber > secretNumber) {
-                outputMessage.textContent = "😳حاجی چخبرته!";
-            } else if (userNumber < secretNumber) {
-                outputMessage.textContent = "🤦‍♂️ناموسا خیلی کمه";
-            }
-        }
         function CheckXO(btn) {  
             if (countXO < 9)
             {         
