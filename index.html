@@ -72,7 +72,7 @@
             background-color: #7700a2;
             color: white;
             border: none;
-            padding: 10px 25px;
+            padding: 20px 35px;
             font-size: 46px;
             cursor: pointer;
             border-radius: 5px;
@@ -174,7 +174,7 @@
             }
         }
         function CheckXO(btn) {  
-            if (countXO <= 9)
+            if (countXO < 9)
             {         
                 if (btn.innerText === "◙") 
                 {
@@ -196,7 +196,7 @@
             
             for (let countWin = 0; countWin < 3; ++countWin)
             {
-                if (countXO <= 9)
+                if (countXO < 9)
                 {
                     if ((board[countWin][0] === board[countWin][1] && board[countWin][1] === board[countWin][2]) ||
                         (board[0][countWin] === board[1][countWin] && board[1][countWin] === board[2][countWin])) 
@@ -206,7 +206,7 @@
                         countXO += 9;
                     }
                 }
-                if (countXO <= 9)
+                if (countXO < 9)
                 {
                     if ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) ||
                         (board[0][2] === board[1][1] && board[1][1] === board[2][0])) 
