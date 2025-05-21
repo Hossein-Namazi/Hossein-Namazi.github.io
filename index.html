@@ -33,20 +33,20 @@
          .peresent {
             top: 30px;
             left: 600px;
-            width: 650px;
+            width: auto;
             height: auto;
         }
         .hadsAdad {
-            top: 70px;
-            left: 55px;
-            width: 450px;
+            top: 75px;
+            left: 70px;
+            width: auto;
             height: auto;
         }
         .XO
         {
-            top: 375px;
-            left: 75px;
-            width: 400;
+            top: 420px;
+            left: 150px;
+            width: auto;
             height: auto;
         }
         input {
@@ -72,15 +72,15 @@
             background-color: rgb(0, 150, 0);
             color: white;
             border: none;
-            padding: 40px 50px;
-            font-size: 26px;
+            padding: 10px 25px;
+            font-size: 46px;
             cursor: pointer;
             border-radius: 5px;
         }
         @media screen and (max-width: 768px) {
             .peresent , .hadsAdad{
                 position: static;
-                width: 90%;
+                width: auto;
                 margin: 20px auto;
                 border-radius: 20px;
                 padding: 15px;
@@ -89,7 +89,7 @@
             }
             .XO{
                 position: static;
-                width: 75%;
+                width: auto;
                 height: auto;
                 margin: 10px auto;
                 border-radius: 10px;
@@ -119,18 +119,20 @@
 </head>>
 <body>
     <div class="peresent">
+        <!-- <span style="font-size: 24px;"></span> -->
         <h1>سلام دوست من</h1>
         <h2>به سایت آزمایشی من خوش اومدی</h2>
-        <h3><span style="font-size: 24px;">این سایت من ینی حسین نمازی طراحی کردم</span></h3>
-        <h3>برای طراحیش از زبون های برنامه نویسی Html و Css و JavaScript استفاده کردم</h3>
+        <h2>این سایت من ینی حسین نمازی طراحی کردم</h3>
+        <h3>برای طراحیش از زبون های برنامه نویسی <span style="font-size: 16px;">Html</span> و <span style="font-size: 16px;">Css</span> و <span style="font-size: 16px;">JavaScript</span> استفاده کردم</h3>
         <h3>برای انتشارش هم از هاست و دامنه رایگان GitHub استفاده کردم</h3>
         <h3>توی این سایت چند تا بازی و اپلیکیشن ساده درست کردم</h3>
         <h3>خوشحال میشم تستشون کنی</h3>
     </div>
     <div class="hadsAdad">
         <h2>بازی حدس عدد</h2>
-        <h4>یک عدد از 1 تا 1000 انتخاب شده</h4>
-        <h4>با تست اعداد مختلف سعی کن عدد درست رو پیدا کنی</h4>
+        <h3>توی این بازی سیستم به صورت تصادفی یک</h3>
+        <h3>عدد از 1 تا 1000 انتخاب میکنه</h3>
+        <h3>حالا تو باید اعداد مختلف رو تست کنی تا عدد مورد نظر رو پیدا کنی</h3>
         <button onclick="checkNum()" id="buttongreen">تست عدد</button>
         <input id="x" placeholder="عدد را به لاتین وارد کنید">
         <p id="output"></p>
