@@ -168,16 +168,18 @@
                 else if (userNumber > secretNumber) 
                 {
                     outputMessage.textContent = "😳حاجی چخبرته!";
+                    --countShans;
                 }
                 else if (userNumber < secretNumber) 
                 {
                     outputMessage.textContent = "🤦‍♂️ناموسا خیلی کمه";
+                    --countShans;
                 }
-                else if (countShans <= 0)
+                if (countShans <= 0)
                 {
-                    outputMessage.textContent = "باید عدد: " + secretNumber + "رو انتخاب میکردی";
+                    outputMessage.textContent = "باید عدد: " + secretNumber + " رو انتخاب میکردی ";
                 }
-                --countShans;
+                
                 outputShans.style.fontSize = 18;
                 outputShans.textContent = "شانس باقیمانده: " + countShans;
             }
