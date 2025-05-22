@@ -139,13 +139,20 @@
             transform: translateY(0px);
             transform: scale(1.07);
             box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        #buttonXO:active {
             transform: translateY(0px);
             transform: scale(1.035);
             box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
         }
+   
         @media screen and (max-width: 768px) {
+            body{
+                font-family: Arial, sans-serif;
+                margin: 0;
+                direction: rtl;
+                background: linear-gradient(135deg, #006f9b, #7f00a2, #006f9b, #7f00a2, #006f9b, #7f00a2);
+                background-size: 500% 500%;
+                animation: gradientShift 20s ease infinite;
+            }
             .peresent , .hadsAdad{
                 position: static;
                 width: auto;
