@@ -7,8 +7,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             direction: rtl;
-            background: linear-gradient(135deg, #51e5ff, #b5ffc5, #94efff, #5fff82);
-            background-size: 400% 400%;
+            background: linear-gradient(135deg, #004864, #3b006b, #004864, #3b006b, #004864, #3b006b);
+            background-size: 500% 500%;
             animation: gradientShift 20s ease infinite;
         }
         @keyframes gradientShift {
@@ -22,49 +22,148 @@
                 background-position: 0% 50%;
             }
         }
-        .peresent{
+        .ribon{
+            background-color: #ffffffcc; 
+            padding: 10px; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ribon:hover {
+            transform: translateY(0px);
+            transform: scaleY(1.00);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.448);
+        }
+        .hadsAdad , .peresent , .XO{
             position: absolute;
             background: rgba(255, 255, 255, 0.691);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgb(0, 0, 0);
             border-radius: 30px;
             text-align: center;
             padding: 20px;
-            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .peresent {
-            top: 300px;
-            left: 820px;
+        .hadsAdad:hover , .peresent:hover , .XO:hover {
+            transform: translateY(0px);
+            transform: scale(1.01);
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+         .peresent {
+            top: 140px;
+            left: 840px;
+            width: auto;
+            height: auto;
+        }
+        .hadsAdad {
+            top: 500px;
+            left: 615px;
+            width: auto;
+            height: auto;
+        }
+        .XO
+        {
+            top: 400px;
+            left: 120px;
             width: auto;
             height: auto;
         }
         input {
             font-size: 15px;
-            color: rgb(0, 150, 0);
+            color: #78008a;
             text-align: center;
             font-weight: bold;
             padding: 10px;
             border-radius: 5px;
-            
-            border: 1px solid #ccc;
+            border: 1px solid rgb(181, 181, 181);
+            box-shadow: 0 3px 3px #949494, 0 10px 20px rgba(0, 0, 0, 0.4);
         }
-        #buttongreen {
-            background-color: rgb(0, 150, 0);
+        #button1 {
+            background-color: #78008a;
             color: white;
             border: none;
             padding: 10px 15px;
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
+            box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #button1:hover {
+            transform: translateY(0px);
+            transform: scale(1.05);
+            box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);        
+        }
+        #button1:active {
+            transform: translateY(0px);
+            transform: scale(1.025);
+            box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);        
+        }
+        #button2 {
+            display: inline-block;
+            text-decoration: none; /* حذف خط زیر لینک */
+            text-align: center;
+            background-color: #c0c0c000;
+            height: auto;
+            color: #5e006c;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #button2:hover {
+            transform: translateY(0px);
+            transform: scale(1.09);
+        }
+        #button2:active {
+            transform: translateY(0px);
+            transform: scale(1.025);
+        }
+        #buttonXO {
+            background-color: #128400;
+            color: #128400;
+            border: none;
+            width: 100px;
+            height: 100px;
+            font-size: 46px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
+            margin: 2px;
+            /* اضافه کردن انیمیشن نرم */
+            transition: transform 1.25s ease-out, box-shadow 1.25s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #buttonXO:hover {
+            transform: translateY(0px);
+            transform: scale(1.07);
+            box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        #buttonXO:active {
+            transform: translateY(0px);
+            transform: scale(1.035);
+            box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
         }
         @media screen and (max-width: 768px) {
-            .peresent{
+            .peresent , .hadsAdad{
                 position: static;
                 width: auto;
                 margin: 20px auto;
                 border-radius: 20px;
                 padding: 15px;
                 background-color: #ffffffee;
-                box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+                box-shadow: 0 0 15px rgb(0, 0, 0);
+            }
+            .XO{
+                position: static;
+                width: auto;
+                height: auto;
+                margin: 10px auto;
+                border-radius: 10px;
+                padding: 8px;
+                background-color: #ffffffee;
+                box-shadow: 0 0 15px rgb(0, 0, 0);
             }
             h1, h2, h3, h4 {
                 font-size: 90%;
@@ -79,16 +178,22 @@
                 padding: 10px;
                 font-size: 18px;
             }
+            #buttonXO {
+            width: 100px;
+            height: 100px;
+            font-size: 46px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.659);
+            }
         }
     </style>
 </head>>
 <body>
-    <nav style="background-color: #ffffffcc; padding: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <a href="index.html" style="margin: 0 15px;">خانه</a>
-        <a href="game.html" style="margin: 0 15px;">بازی‌ها</a>
-        <a href="design.html" style="margin: 0 15px;">ساخت سایت</a>
-        <a href="about.html" style="margin: 0 15px;">درباره ما</a>
-    </nav>
+    <div class="ribon">
+        <a href="index.html" id="button2" style="margin: 0 15px;">خانه</a>
+        <a href="games.html" id="button2" style="margin: 0 15px;">بازی‌ها</a>
+        <a href="design.html" id="button2" style="margin: 0 15px;">ساخت سایت</a>
+        <a href="about.html" id="button2" style="margin: 0 15px;">درباره ما</a>
+    </div>
     <div class="peresent">
         <!-- <span style="font-size: 24px;"></span> -->
         <h1>ساخت سایت</h1>
