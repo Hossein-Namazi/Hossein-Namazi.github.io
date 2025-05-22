@@ -69,10 +69,11 @@
             border-radius: 5px;
         }
         #buttonXO {
-            background-color: #7700a2;
-            color: white;
+            background-color: #00bdc7;
+            color: #00bdc7;
             border: none;
-            padding: 20px 35px;
+            width: 100px;
+            height: 100px;
             font-size: 46px;
             cursor: pointer;
             border-radius: 5px;
@@ -111,7 +112,8 @@
                 font-size: 18px;
             }
             #buttonXO {
-            padding: 30px 40px;
+            width: 100px;
+            height: 70px;
             font-size: 46px;
             }
         }
@@ -140,17 +142,17 @@
     </div>
     <div class="XO">
         <h3><span dir="ltr">XO</span> (دو نفره)</h3>
-        <button onclick="CheckXO(this); buttonXO1(); winXO()" id="buttonXO">◙</button>
-        <button onclick="CheckXO(this); buttonXO2(); winXO()" id="buttonXO">◙</button>
-        <button onclick="CheckXO(this); buttonXO3(); winXO()" id="buttonXO">◙</button>
+        <button onclick="CheckXO(this); buttonXO1(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO2(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO3(); winXO()" id="buttonXO">.</button>
         <h3></6>
-        <button onclick="CheckXO(this); buttonXO4(); winXO()" id="buttonXO">◙</button>
-        <button onclick="CheckXO(this); buttonXO5(); winXO()" id="buttonXO">◙</button>
-        <button onclick="CheckXO(this); buttonXO6(); winXO()" id="buttonXO">◙</button>
+        <button onclick="CheckXO(this); buttonXO4(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO5(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO6(); winXO()" id="buttonXO">.</button>
         <h3></6>
-        <button onclick="CheckXO(this); buttonXO7(); winXO()" id="buttonXO">◙</button>
-        <button onclick="CheckXO(this); buttonXO8(); winXO()" id="buttonXO">◙</button>
-        <button onclick="CheckXO(this); buttonXO9(); winXO()" id="buttonXO">◙</button>
+        <button onclick="CheckXO(this); buttonXO7(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO8(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO9(); winXO()" id="buttonXO">.</button>
     </div>
     <script>
         let secretNumber = Number(Math.floor(Math.random() * 1000) + 1);
@@ -195,15 +197,17 @@
         function CheckXO(btn) {  
             if (countXO < 9)
             {         
-                if (btn.innerText === "◙") 
+                if (btn.innerText === ".") 
                 {
                     if(countXO % 2 === 0)
                     {
                         btn.innerText = "X";
+                        btn.style.color = "red";
                     }
                     if(countXO % 2 !== 0)
                     {
                         btn.innerText = "O";
+                        btn.style.color = "blue";
                     }
                     countXO += 1;
                     
