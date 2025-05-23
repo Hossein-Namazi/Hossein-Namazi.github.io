@@ -120,31 +120,6 @@
             transform: translateY(0px);
             transform: scale(1.025);
         }
-        #buttonXO {
-            background-color: #128400;
-            color: #128400;
-            border: none;
-            width: 100px;
-            height: 100px;
-            font-size: 46px;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
-            margin: 2px;
-            /* اضافه کردن انیمیشن نرم */
-            transition: transform 1.25s ease-out, box-shadow 1.25s ease-out;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #buttonXO:hover {
-            transform: translateY(0px);
-            transform: scale(1.07);
-            box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        #buttonXO:active {
-            transform: translateY(0px);
-            transform: scale(1.035);
-            box-shadow: 0 4px 0 #0f6f00, 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
         @media screen and (max-width: 768px) {
             body{
                 font-family: Arial, sans-serif;
@@ -181,16 +156,15 @@
                 font-size: 16px;
                 margin-bottom: 10px;
             }
-            #buttongreen {
+            #button1 {
                 width: 100%;
                 padding: 10px;
                 font-size: 18px;
             }
-            #buttonXO {
-            width: 100px;
-            height: 100px;
-            font-size: 46px;
-            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.659);
+            #button1:hover {
+                transform: translateY(0px);
+                transform: scale(1.05);
+                box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);        
             }
         }
     </style>
