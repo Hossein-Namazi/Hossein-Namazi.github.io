@@ -36,6 +36,9 @@
         }
         .hadsAdad {
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: rgba(255, 255, 255, 0.691);
             box-shadow: 0 0 20px rgb(0, 0, 0);
             border-radius: 30px;
@@ -46,6 +49,7 @@
             height: auto;
         }
         .hadsAdad:hover{
+            transform: translate(-50%, -50%) scale(1.01);
             box-shadow: 0 0 40px rgb(0, 0, 0);
         }
         input {
@@ -112,12 +116,18 @@
             }
             .hadsAdad{
                 position: static;
-                width: auto;
+                transform: none;
                 margin: 20px auto;
+                width: 90%;
+                background-color: rgba(255, 255, 255, 0.95);
                 border-radius: 20px;
-                padding: 15px;
-                background-color: #ffffffee;
-                box-shadow: 0 0 15px rgb(0, 0, 0);
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+                padding: 20px;
+            }
+            .hadsAdad:hover{
+                
+                transform: none;
+                box-shadow: 0 0 40px rgb(0, 0, 0);
             }
             h1, h2, h3, h4 {
                 font-size: 90%;
