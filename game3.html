@@ -144,6 +144,7 @@
         <button onclick="handleButtonClick();" class="buttonnumber" id="startCheckBtn">شروع</button>
     </div>
     <script>
+        let count = 0;
         let set = "";
         let original = "";
         let waitingForInput = false;
@@ -166,8 +167,10 @@
                     let newNumber = Math.floor(Math.random() * 4) + 1;
                     original += newNumber.toString();
                     animateSequence(original, 0);
+                    count += 1;
                 } else {
-                    alert("اشتباه بود! بازی از نو شروع شد.");
+                    alert("ری.. آبم قعطه!");
+                    alert("رکوردت:"+ count);
                     btn.textContent = "شروع";
                     original = "";
                     set = "";
