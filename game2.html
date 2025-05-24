@@ -1,0 +1,246 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دوز</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            direction: rtl;
+            background: linear-gradient(135deg, #004864, #3b006b, #004864, #3b006b, #004864, #3b006b);
+            background-size: 500% 500%;
+            animation: gradientShift 20s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .ribon{
+            background-color: #ffffffcc; 
+            padding: 10px; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ribon:hover {
+            transform: translateY(0px);
+            transform: scaleY(1.00);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.448);
+        }
+        .XO{
+            position: absolute;
+            background: rgba(255, 255, 255, 0.691);
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            border-radius: 30px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+        }
+        .XO:hover {
+            transform: translate(-50%, -50%) scale(1.01);
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+        #button2 {
+            display: inline-block;
+            text-decoration: none; /* حذف خط زیر لینک */
+            text-align: center;
+            background-color: #c0c0c000;
+            height: auto;
+            color: #5e006c;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #button2:hover {
+            transform: translateY(0px);
+            transform: scale(1.09);
+        }
+        #button2:active {
+            transform: translateY(0px);
+            transform: scale(1.025);
+        }
+        #buttonXO {
+            background-color: #720084;
+            color: #720084;
+            border: none;
+            width: 100px;
+            height: 100px;
+            font-size: 46px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 0 #3f0048, 0 10px 20px rgba(0, 0, 0, 0.4);
+            margin: 2px;
+            /* اضافه کردن انیمیشن نرم */
+            transition: transform 1.25s ease-out, box-shadow 1.25s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #buttonXO:hover {
+            transform: translateY(0px);
+            transform: scale(1.07);
+            box-shadow: 0 4px 0 #4e005a, 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        #buttonXO:active {
+            transform: translateY(0px);
+            transform: scale(1.035);
+            box-shadow: 0 4px 0 #4e005a, 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+ 
+        @media screen and (max-width: 768px) {
+            body{
+                font-family: Arial, sans-serif;
+                margin: 0;
+                direction: rtl;
+                background: linear-gradient(135deg, #006f9b, #7f00a2, #006f9b, #7f00a2, #006f9b, #7f00a2);
+                background-size: 500% 500%;
+                animation: gradientShift 20s ease infinite;
+            }
+            .XO{
+                position: static;
+                width: auto;
+                height: auto;
+                margin: 10px auto;
+                border-radius: 10px;
+                padding: 8px;
+                background-color: #ffffffee;
+                box-shadow: 0 0 15px rgb(0, 0, 0);
+            }
+            h1, h2, h3, h4 {
+                font-size: 90%;
+            }
+            #button2:hover {
+                transform: translateY(0px);
+                transform: scale(1);
+            }
+            #buttonXO {
+            width: 100px;
+            height: 100px;
+            font-size: 46px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.659);
+            }
+            #buttonXO:hover {
+                transform: translateY(0px);
+                transform: scale(1);
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.659);
+            }
+        }
+    </style>
+</head>>
+<body>
+    <div class="ribon">
+        <a href="index.html" id="button2" style="margin: 0 15px;">خانه</a>
+        <a href="game1.html" id="button2" style="margin: 0 15px;">حدس عدد</a>
+        <a href="game2.html" id="button2" style="margin: 0 15px;">دوز</a>
+        <a href="game3.html" id="button2" style="margin: 0 15px;">حفظ عدد</a>
+    </div>
+    <div class="XO">
+        <h3><span dir="ltr">XO</span> (دو نفره)</h3>
+        <button onclick="CheckXO(this); buttonXO1(); winXO()" id="buttonXO"">.</button>
+        <button onclick="CheckXO(this); buttonXO2(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO3(); winXO()" id="buttonXO">.</button>
+        <h3></6>
+        <button onclick="CheckXO(this); buttonXO4(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO5(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO6(); winXO()" id="buttonXO">.</button>
+        <h3></6>
+        <button onclick="CheckXO(this); buttonXO7(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO8(); winXO()" id="buttonXO">.</button>
+        <button onclick="CheckXO(this); buttonXO9(); winXO()" id="buttonXO">.</button>
+    </div>
+    <script>
+        let countXO = 0;
+        let board = [
+            ["1", "2", "3"],
+            ["4", "5", "6"],
+            ["7", "8", "9"]
+        ];
+        function CheckXO(btn) {  
+            if (countXO < 9)
+            {         
+                if (btn.innerText === ".") 
+                {
+                    if(countXO % 2 === 0)
+                    {
+                        btn.innerText = "X";
+                        btn.style.color = "red";
+                    }
+                    if(countXO % 2 !== 0)
+                    {
+                        btn.innerText = "O";
+                        btn.style.color = "blue";
+                    }
+                    countXO += 1;
+                    
+                }
+            }
+        }
+        function winXO()
+        {
+            
+            for (let countWin = 0; countWin < 3; ++countWin)
+            {
+                if (countXO < 9)
+                {
+                    if ((board[countWin][0] === board[countWin][1] && board[countWin][1] === board[countWin][2]) ||
+                        (board[0][countWin] === board[1][countWin] && board[1][countWin] === board[2][countWin])) 
+                    {
+                        if(countXO % 2 !== 0){alert("X برنده بازیکن");}
+                        else{alert("O برنده بازیکن");}
+                        countXO += 9;
+                    }
+                }
+                if (countXO < 9)
+                {
+                    if ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) ||
+                        (board[0][2] === board[1][1] && board[1][1] === board[2][0])) 
+                    {
+                        if(countXO % 2 !== 0){alert("X برنده بازیکن");}
+                        else{alert("O برنده بازیکن");}
+                        countXO += 9;
+                    }
+                }
+            }
+        }
+        function buttonXO1(){
+            if (countXO % 2 !== 0) {board[0][0] = "X"}
+            if (countXO % 2 === 0) {board[0][0] = "O"}winXO()}
+        function buttonXO2(){
+            if (countXO % 2 !== 0) {board[0][1] = "X"}
+            if (countXO % 2 === 0) {board[0][1] = "O"}winXO()}
+        function buttonXO3(){
+            if (countXO % 2 !== 0) {board[0][2] = "X"}
+            if (countXO % 2 === 0) {board[0][2] = "O"}winXO()}
+        function buttonXO4(){
+            if (countXO % 2 !== 0) {board[1][0] = "X"}
+            if (countXO % 2 === 0) {board[1][0] = "O"}winXO()}
+        function buttonXO5(){
+            if (countXO % 2 !== 0) {board[1][1] = "X"}
+            if (countXO % 2 === 0) {board[1][1] = "O"}winXO()}
+        function buttonXO6(){
+            if (countXO % 2 !== 0) {board[1][2] = "X"}
+            if (countXO % 2 === 0) {board[1][2] = "O"}winXO()}
+        function buttonXO7(){
+            if (countXO % 2 !== 0) {board[2][0] = "X"}
+            if (countXO % 2 === 0) {board[2][0] = "O"}winXO()}
+        function buttonXO8(){
+            if (countXO % 2 !== 0) {board[2][1] = "X"}
+            if (countXO % 2 === 0) {board[2][1] = "O"}winXO()}
+        function buttonXO9(){
+            if (countXO % 2 !== 0) {board[2][2] = "X"}
+            if (countXO % 2 === 0) {board[2][2] = "O"}winXO()}
+    </script>
+</body>
+</html>

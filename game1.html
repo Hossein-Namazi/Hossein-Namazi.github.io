@@ -1,0 +1,215 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حدس عدد</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            direction: rtl;
+            background: linear-gradient(135deg, #004864, #3b006b, #004864, #3b006b, #004864, #3b006b);
+            background-size: 500% 500%;
+            animation: gradientShift 20s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .ribon{
+            background-color: #ffffffcc; 
+            padding: 10px; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ribon:hover {
+            transform: translateY(0px);
+            transform: scaleY(1.00);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.448);
+        }
+        .hadsAdad {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.691);
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            border-radius: 30px;
+            text-align: center;
+            padding: 20px;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+        }
+        .hadsAdad:hover{
+            transform: translate(-50%, -50%) scale(1.01);
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+        input {
+            font-size: 15px;
+            color: #78008a;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(181, 181, 181);
+            box-shadow: 0 3px 3px #949494, 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        #button1 {
+            background-color: #78008a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #button1:hover {
+            transform: translateY(0px);
+            transform: scale(1.05);
+            box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);        
+        }
+        #button1:active {
+            transform: translateY(0px);
+            transform: scale(1.025);
+            box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);        
+        }
+        #button2 {
+            display: inline-block;
+            text-decoration: none; /* حذف خط زیر لینک */
+            text-align: center;
+            background-color: #c0c0c000;
+            height: auto;
+            color: #5e006c;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #button2:hover {
+            transform: translateY(0px);
+            transform: scale(1.09);
+        }
+        #button2:active {
+            transform: translateY(0px);
+            transform: scale(1.025);
+        }
+        @media screen and (max-width: 768px) {
+            body{
+                font-family: Arial, sans-serif;
+                margin: 0;
+                direction: rtl;
+                background: linear-gradient(135deg, #006f9b, #7f00a2, #006f9b, #7f00a2, #006f9b, #7f00a2);
+                background-size: 500% 500%;
+                animation: gradientShift 20s ease infinite;
+            }
+            .hadsAdad{
+                position: static;
+                width: auto;
+                margin: 20px auto;
+                border-radius: 20px;
+                padding: 15px;
+                background-color: #ffffffee;
+                box-shadow: 0 0 15px rgb(0, 0, 0);
+            }
+            h1, h2, h3, h4 {
+                font-size: 90%;
+            }
+            input {
+                width: 100%;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            #button1 {
+                width: auto;
+                height: auto;
+                padding: 10px;
+                font-size: 18px;
+            }
+            #button1:hover {
+                transform: translateY(0px);
+                transform: scale(1);
+                box-shadow: 0 4px 0 #5e006c, 0 10px 20px rgba(0, 0, 0, 0.4);
+            }
+            #button2:hover {
+                transform: translateY(0px);
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>>
+<body>
+    <div class="ribon">
+        <a href="index.html" id="button2" style="margin: 0 15px;">خانه</a>
+        <a href="game1.html" id="button2" style="margin: 0 15px;">حدس عدد</a>
+        <a href="game2.html" id="button2" style="margin: 0 15px;">دوز</a>
+        <a href="game3.html" id="button2" style="margin: 0 15px;">حفظ عدد</a>
+    </div>
+    <div class="hadsAdad">
+        <h2>بازی حدس عدد</h2>
+        <h3>توی این بازی سیستم به صورت تصادفی یک عدد از 1 تا 1000 انتخاب میکنه</h3>
+        <h3</h3>
+        <h3>حالا تو باید اعداد مختلف رو تست کنی تا عدد مورد نظر رو پیدا کنی</h3>
+        <button onclick="checkNum()" id="button1">تست عدد</button>
+        <input id="x" placeholder="عدد را به لاتین وارد کنید">
+        <p id="output"></p>
+        <p id="shans"><span dir="ltr" style="font-size: 20px;">10 :شانس باقیمانده</span></p>
+    </div>
+    <script>
+        let secretNumber = Number(Math.floor(Math.random() * 1000) + 1);
+        let countShans = 10;
+        function checkNum() {
+            let userNumber = Number(document.getElementById("x").value);
+            let outputMessage = document.getElementById("output");
+            let outputShans = document.getElementById("shans");
+            if (countShans > 0)
+            {
+                if (userNumber > 0 && userNumber < 1001)
+                {
+                    if (userNumber > secretNumber) 
+                    {
+                        --countShans;
+                        outputMessage.textContent = "😳حاجی چخبرته!";
+                        outputMessage.style.fontSize = "20px";
+                        
+                    }
+                    if (userNumber < secretNumber) 
+                    {
+                        --countShans;
+                        outputMessage.textContent = "🤦‍♂️ناموسا خیلی کمه";
+                        outputMessage.style.fontSize = "20px";
+                        
+                    }
+                    if (userNumber === secretNumber) 
+                    {
+                        --countShans;
+                        outputMessage.textContent = "😂چه عجب درست زدی";
+                        outputMessage.style.fontSize = "20px";
+                    }
+                    else if (countShans <= 0)
+                    {
+                        outputMessage.textContent = "باید عدد: " + secretNumber + " رو انتخاب میکردی ";
+                        outputMessage.style.fontSize = "20px";
+                    }
+                    
+                    outputShans.style.fontSize = 18;
+                    outputShans.textContent = "شانس باقیمانده: " + countShans;
+                    outputShans.style.fontSize = "20px";
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

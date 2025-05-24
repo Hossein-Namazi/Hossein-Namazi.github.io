@@ -1,0 +1,200 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دوز</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            direction: rtl;
+            background: linear-gradient(135deg, #004864, #3b006b, #004864, #3b006b, #004864, #3b006b);
+            background-size: 500% 500%;
+            animation: imageback 20s ease infinite;
+        }
+        @keyframes imageback {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes popUp {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .animate-pop {
+            animation: popUp 0.5s ease;
+        }
+        .ribon{
+            background-color: #ffffffcc; 
+            padding: 10px; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ribon:hover {
+            transform: scaleY(1.00);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.448);
+        }
+        .number{
+            position: absolute;
+            background: rgba(255, 255, 255, 0.691);
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            border-radius: 30px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+        }
+        .number:hover {
+            box-shadow: 0 0 40px rgb(0, 0, 0);
+        }
+        #button2 {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            background-color: #c0c0c000;
+            height: auto;
+            color: #5e006c;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #button2:hover {
+            transform: scale(1.09);
+        }
+        #button2:active {
+            transform: scale(1.025);
+        }
+        .buttonnumber {
+            background-color: #5a0068;
+            color: #fff;
+            border: none;
+            width: 100px;
+            height: 100px;
+            font-size: 40px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 0 #3f0048, 0 10px 20px rgba(0, 0, 0, 0.4);
+            margin: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .buttonnumber:hover {
+            transform: scale(1.07);
+            box-shadow: 0 4px 0 #4e005a, 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .buttonnumber:active {
+            transform: scale(1.035);
+            box-shadow: 0 4px 0 #4e005a, 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        @media screen and (max-width: 768px) {
+            body{
+                font-family: Arial, sans-serif;
+                margin: 0;
+                direction: rtl;
+                background: linear-gradient(135deg, #006f9b, #7f00a2, #006f9b, #7f00a2, #006f9b, #7f00a2);
+                background-size: 500% 500%;
+                animation: imageback 20s ease infinite;
+            }
+            .number{
+                position: static;
+                width: auto;
+                height: auto;
+                margin: 10px auto;
+                border-radius: 10px;
+                padding: 8px;
+                background-color: #ffffffee;
+                box-shadow: 0 0 15px rgb(0, 0, 0);
+            }
+            h1, h2, h3, h4 {
+                font-size: 90%;
+            }
+            #button2:hover {
+                transform: scale(1);
+            }
+            .buttonnumber {
+                width: 100px;
+                height: 100px;
+                font-size: 46px;
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.659);
+            }
+            .buttonnumber:hover {
+                transform: scale(1);
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.659);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ribon">
+        <a href="index.html" id="button2" style="margin: 0 15px;">خانه</a>
+        <a href="game1.html" id="button2" style="margin: 0 15px;">حدس عدد</a>
+        <a href="game2.html" id="button2" style="margin: 0 15px;">دوز</a>
+        <a href="game3.html" id="button2" style="margin: 0 15px;">حفظ عدد</a>
+    </div>
+    <div class="number">
+        <button onclick="add1();" class="buttonnumber" id="buttonnumber1"></button>
+        <button onclick="add2();" class="buttonnumber" id="buttonnumber2"></button>
+        <h1></h1>
+        <button onclick="add3();" class="buttonnumber" id="buttonnumber3"></button>
+        <button onclick="add4();" class="buttonnumber" id="buttonnumber4"></button>
+        <h1></h1>
+        <button onclick="handleButtonClick();" class="buttonnumber" id="startCheckBtn">شروع</button>
+    </div>
+    <script>
+        let set = "";
+        let original = "";
+        let waitingForInput = false;
+        function add1() { set += "1";}
+        function add2() { set += "2";}
+        function add3() { set += "3";}
+        function add4() { set += "4";}
+        function handleButtonClick() {
+            const btn = document.getElementById("startCheckBtn");
+            if (!waitingForInput) {
+                set = "";
+                let newNumber = Math.floor(Math.random() * 4) + 1;
+                original += newNumber.toString();
+                animateSequence(original, 0);
+                waitingForInput = true;
+                btn.textContent = "بررسی";
+            } else {
+                if (set === original) {
+                    set = "";
+                    let newNumber = Math.floor(Math.random() * 4) + 1;
+                    original += newNumber.toString();
+                    animateSequence(original, 0);
+                } else {
+                    alert("اشتباه بود! بازی از نو شروع شد.");
+                    btn.textContent = "شروع";
+                    original = "";
+                    set = "";
+                }
+                waitingForInput = true;
+            }
+        }
+        function animateSequence(seq, pos) {
+            if (pos >= seq.length) return;
+            let btnId = "buttonnumber" + seq[pos];
+            let btn = document.getElementById(btnId);
+            if (btn) {
+                btn.classList.add("animate-pop");
+                setTimeout(() => {
+                    btn.classList.remove("animate-pop");
+                    setTimeout(() => {
+                        animateSequence(seq, pos + 1);
+                    }, 300);
+                }, 600);
+            } else {
+                animateSequence(seq, pos + 1);
+            }
+        }
+    </script>
+</body>
+</html>
