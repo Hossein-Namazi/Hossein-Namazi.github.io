@@ -74,51 +74,33 @@
             transform: scale(1.025);
         }
         @media screen and (max-width: 768px) {
-            body {
+            body{
+                font-family: Arial, sans-serif;
+                margin: 0;
+                direction: rtl;
                 background: linear-gradient(135deg, #006f9b, #7f00a2, #006f9b, #7f00a2, #006f9b, #7f00a2);
                 background-size: 500% 500%;
                 animation: gradientShift 20s ease infinite;
             }
-
-            .peresent {
+            .peresent{
                 position: static;
-                width: 90%;
-                margin: 30px auto;
-                border-radius: 15px;
-                padding: 20px;
+                width: auto;
+                margin: 20px auto;
+                border-radius: 20px;
+                padding: 15px;
                 background-color: #ffffffee;
-                box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+                box-shadow: 0 0 15px rgb(0, 0, 0);
+                transform: translate(-50%, -50%);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-
-            h1 {
-                font-size: 22px;
+            h1, h2, h3, h4 {
+                font-size: 90%;
             }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            h3 {
-                font-size: 16px;
-            }
-
-            .ribon {
-                flex-wrap: wrap;
-                padding: 10px 5px;
-            }
-
-            .ribon a {
-                display: inline-block;
-                margin: 5px 10px;
-                font-size: 16px;
-                padding: 6px 10px;
-            }
-
             #button2:hover {
-                transform: none;
+                transform: translateY(0px);
+                transform: scale(1);
             }
         }
-
     </style>
 </head>>
 <body>
