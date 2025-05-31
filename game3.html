@@ -31,6 +31,11 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
 	    z-index: 1000;
+	    position: fixed;
+            top: 2%;
+            left: 0;
+            right: 0;
+   	    z-index: 1000;
         }
         .ribon:hover {
             transform: translateY(0px);
@@ -103,10 +108,27 @@
                 background-size: 500% 500%;
                 animation: imageback 20s ease infinite;
             }
+	    .ribon {
+        	background-color: #ffffffcc;
+        	padding: 8px 5px;
+        	text-align: center;
+        	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        	transition: transform 0.3s ease, box-shadow 0.3s ease;
+        	position: fixed; 
+        	top: 2%;         
+        	left: 0;
+        	right: 0;
+        	z-index: 1000;
+        	display: flex;           
+        	flex-wrap: wrap;       
+        	justify-content: center; 
+        	gap: 10px;        
+       		font-size: 16px;    
+            }
             .number{
                 position: static;
                 transform: none;
-                margin: 20px auto;
+                margin: 60px auto 20px auto;
                 width: 90%;
                 background-color: rgba(255, 255, 255, 0.95);
                 border-radius: 20px;
@@ -139,6 +161,7 @@
 </head>
 <body>
     <div class="ribon">
+        <h1></h1>
         <a href="index.html" id="button2" style="margin: 0 15px;">خانه</a>
         <a href="game1.html" id="button2" style="margin: 0 15px;">حدس عدد</a>
         <a href="game2.html" id="button2" style="margin: 0 15px;">دوز</a>
