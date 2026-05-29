@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reza.A | طراحی وب حرفه‌ای</title>
+  <!-- favicon (آیکون تب) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c5a7a'%3E%3Cpath d='M19.14 7.5A9.94 9.94 0 0 1 21 12c0 5.52-4.48 10-10 10S1 17.52 1 12 5.48 2 11 2c1.6 0 3.12.38 4.48 1.05L13.5 5.5 17 9l2.14-1.5zM15 7.5L12 4.5 9 7.5l3 3 3-3z'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- منوی سایدبار (سه خط بالا سمت چپ) -->
-<div class="menu-toggle" id="menuToggle">
+<div class="hamburger" id="hamburger">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
@@ -20,127 +21,70 @@
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-close" id="sidebarClose">&times;</div>
   <nav class="sidebar-nav">
-    <a href="#home" class="sidebar-link">خانه</a>
-    <a href="#services" class="sidebar-link">خدمات</a>
-    <a href="portfolio.html" class="sidebar-link">نمونه کارها</a>
-    <a href="#about" class="sidebar-link">درباره ما</a>
-    <a href="#contact" class="sidebar-link">تماس</a>
+    <a href="#home"><i class="fas fa-home"></i> خانه</a>
+    <a href="#services"><i class="fas fa-cogs"></i> خدمات</a>
+    <a href="#products"><i class="fas fa-boxes"></i> محصولات</a>
+    <a href="#about"><i class="fas fa-users"></i> درباره ما</a>
+    <a href="#contact"><i class="fas fa-phone-alt"></i> تماس</a>
+    <a href="products.html"><i class="fas fa-list-ul"></i> همه محصولات</a>
   </nav>
-</div>
-
+</aside>
 <div class="overlay" id="overlay"></div>
 
-<!-- هدر اصلی -->
 <header class="main-header">
-  <div class="container header-container">
+  <div class="container" style="display: flex; justify-content: center; align-items: center; gap: 12px;">
+    <!-- آیکون جدید چرخ‌دنده صنعتی -->
+    <i class="fas fa-cogs" style="font-size: 2rem; color: #2c5a7a;"></i>
     <div class="logo">Reza.A</div>
   </div>
 </header>
 
 <main>
-  <!-- بخش قهرمان (خانه) -->
   <section id="home" class="hero">
     <div class="container">
-      <h1>طراحی مدرن <span>سایت‌های حرفه‌ای</span></h1>
-      <p>نمایش محصولات، نمونه کارها و خدمات — بدون پیچیدگی، با کد تمیز و ظاهری شبیه به perticon.com</p>
+      <h1>تجهیزات صنعتی <span>و هیدرولیک</span></h1>
+      <p>ارائه‌دهنده قطعات اصلی هیدرولیک، پمپ‌ها، شیلنگ‌ها و اتصالات با کیفیت بالا — مناسب برای معرفی و بارگذاری اجناس</p>
       <div class="hero-buttons">
-        <a href="#portfolio" class="btn">مشاهده نمونه کارها</a>
-        <a href="#contact" class="btn btn-outline">درخواست همکاری</a>
+        <a href="#products" class="btn btn-primary">مشاهده محصولات</a>
+        <a href="#contact" class="btn btn-outline">تماس با ما</a>
       </div>
     </div>
   </section>
 
-  <!-- خدمات -->
   <section id="services" class="services">
     <div class="container">
-      <div class="section-title">
-        <h2>خدمات ما</h2>
-        <p>طراحی سایت‌های ریسپانسیو و منحصربه‌فرد</p>
-      </div>
+      <div class="section-title"><h2>خدمات ما</h2><p>راهکارهای تخصصی در حوزه صنعت</p></div>
       <div class="service-grid">
-        <div class="service-card">
-          <i class="fas fa-code service-icon"></i>
-          <h3>HTML / CSS خالص</h3>
-          <p>بدون وابستگی به فریم ورک‌های سنگین، کدهایی سبک و سریع.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-palette service-icon"></i>
-          <h3>رابط کاربری شیک</h3>
-          <p>همانند سایت نمونه، با فضای سفید و تایپوگرافی خوانا.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-cubes service-icon"></i>
-          <h3>بارگذاری محصولات</h3>
-          <p>گریدهای انعطاف‌پذیر برای نمایش اجناس بدون نیاز به درگاه پرداخت.</p>
-        </div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-oil-can"></i></div><h3>قطعات هیدرولیک</h3><p>تأمین انواع پمپ، موتور و شیرآلات هیدرولیک صنعتی</p></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>مشاوره فنی</h3><p>انتخاب بهترین قطعات متناسب با نیاز خط تولید شما</p></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>بارگذاری اجناس</h3><p>نمایش کالاها در سایت بدون نیاز به قیمت و درگاه پرداخت</p></div>
       </div>
     </div>
   </section>
 
-  <!-- نمونه کارها (قسمتی از صفحه اصلی) -->
-  <section id="portfolio" class="portfolio">
+  <section id="products" class="products">
     <div class="container">
-      <div class="section-title">
-        <h2>آخرین نمونه کارها</h2>
-        <p>پروژه‌های اخیر تیم Reza.A</p>
+      <div class="section-title"><h2>محصولات ویژه</h2><p>برخی از اجناس قابل بارگذاری در انبار</p></div>
+      <div class="product-grid">
+        <div class="product-card"><div class="product-img"><i class="fas fa-pump-soap"></i></div><div class="product-info"><h3>پمپ هیدرولیک</h3><p>مدل PVplus ، جابجایی متغیر، مناسب صنایع سنگین</p></div></div>
+        <div class="product-card"><div class="product-img"><i class="fas fa-microchip"></i></div><div class="product-info"><h3>شیر پروپرشنال</h3><p>کنترل دقیق جریان روغن، ساخت آلمان</p></div></div>
+        <div class="product-card"><div class="product-img"><i class="fas fa-water"></i></div><div class="product-info"><h3>شیلنگ فشار قوی</h3><p>چهار لایه، مقاوم تا ۴۰۰ بار</p></div></div>
+        <div class="product-card"><div class="product-img"><i class="fas fa-filter"></i></div><div class="product-info"><h3>فیلتر برگشتی</h3><p>راندمان بالا، قابلیت تعویض المنت</p></div></div>
       </div>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <div class="portfolio-img"><i class="fas fa-laptop-code fa-3x"></i></div>
-          <div class="portfolio-info">
-            <h3>سایت معرفی برند</h3>
-            <p>طراحی اختصاصی با منوی سمت چپ</p>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="portfolio-img"><i class="fas fa-store fa-3x"></i></div>
-          <div class="portfolio-info">
-            <h3>نمایشگاه محصولات</h3>
-            <p>گرید مدرن و سازگار با موبایل</p>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="portfolio-img"><i class="fas fa-chart-line fa-3x"></i></div>
-          <div class="portfolio-info">
-            <h3>داشبورد تحلیلی</h3>
-            <p>کاربرد آسان برای ارائه آمار</p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center" style="margin-top: 2rem;">
-        <a href="portfolio.html" class="btn btn-outline">مشاهده همه نمونه کارها</a>
-      </div>
+      <div class="text-center" style="margin-top: 2rem;"><a href="products.html" class="btn btn-outline">مشاهده همه محصولات <i class="fas fa-arrow-left"></i></a></div>
     </div>
   </section>
 
-  <!-- درباره ما -->
   <section id="about" class="about">
     <div class="container about-inner">
-      <div class="about-text">
-        <h2>درباره Reza.A</h2>
-        <p>ما با تمرکز بر نیاز کارفرما، سایت‌های سریع، ساده و حرفه‌ای طراحی می‌کنیم. تجربه کار با بیش از ۳۰ پروژه موفق در زمینه‌های مختلف.</p>
-        <p>هدف ما ارائه کدهای پاک و آماده برای استفاده فوری است — بدون اتلاف وقت.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat">
-          <div class="stat-number">+۳۰</div>
-          <p>پروژه انجام شده</p>
-        </div>
-        <div class="stat">
-          <div class="stat-number">۱۰۰٪</div>
-          <p>رضایت مشتری</p>
-        </div>
-      </div>
+      <div class="about-text"><h2>درباره شرکت Reza.A</h2><p>با بیش از یک دهه تجربه در تأمین قطعات صنعتی و هیدرولیک، همواره کالاهای اصلی و با کیفیت را به مشتریان عرضه می‌کنیم. سایت ما بستری برای معرفی و بارگذاری اجناس بدون درگیر شدن با قیمت‌گذاری آنلاین است.</p></div>
+      <div class="about-stats"><div class="stat"><div class="stat-number">+۱۵۰</div><p>نوع کالا</p></div><div class="stat"><div class="stat-number">۱۰۰٪</div><p>تضمین اصالت</p></div></div>
     </div>
   </section>
 
-  <!-- تماس (آدرس و شماره با خط تیره) -->
   <section id="contact" class="contact">
     <div class="container">
-      <div class="section-title">
-        <h2>تماس با ما</h2>
-        <p>برای مشاوره رایگان فرم زیر را تکمیل کنید</p>
-      </div>
+      <div class="section-title"><h2>تماس با ما</h2><p>برای استعلام و همکاری فرم زیر را پر کنید</p></div>
       <div class="contact-wrapper">
         <div class="contact-info">
           <h3>اطلاعات تماس</h3>
@@ -149,22 +93,23 @@
           <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span>---</span></div>
         </div>
         <form class="contact-form" id="contactForm">
-          <input type="text" placeholder="نام و نام خانوادگی" required>
-          <input type="email" placeholder="ایمیل" required>
-          <textarea rows="4" placeholder="توضیحات پروژه ..."></textarea>
-          <button type="submit" class="btn">ارسال پیام</button>
+          <input type="text" id="contactName" placeholder="نام و نام خانوادگی" required>
+          <input type="email" id="contactEmail" placeholder="ایمیل" required>
+          <textarea id="contactMessage" rows="4" placeholder="توضیحات پروژه ..." required></textarea>
+          <button type="submit" class="btn" style="background:#1e2a3a;">ارسال پیام</button>
         </form>
+      </div>
+      <div class="whatsapp-link-container" style="text-align: center; margin-top: 1.5rem;">
+        <a href="https://wa.me/989307211787?text=سلام%20من%20از%20سایت%20Reza.A%20پیام%20می‌دهم" target="_blank" class="btn btn-outline" style="background:#25D366; color:white; border:none;">
+          <i class="fab fa-whatsapp"></i> ارسال پیام در واتساپ
+        </a>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-content">
-      <p>© ۲۰۲۵ Reza.A — تمامی حقوق محفوظ است</p>
-    </div>
-  </div>
+  <div class="container"><p>© ۲۰۲۵ Reza.A — تمامی حقوق محفوظ است</p></div>
 </footer>
 
 <script src="script.js"></script>
