@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #ffffff;
-  color: #1a1e24;
+  color: #1e293b;
   line-height: 1.5;
   direction: rtl;
 }
@@ -18,44 +18,39 @@ body {
   padding: 0 32px;
 }
 
-/* منوی همبرگری (سه خط) */
-.menu-toggle {
+/* هدر و منوی همبرگری */
+.hamburger {
   position: fixed;
   top: 24px;
-  right: 32px;
+  right: 28px;
   z-index: 110;
-  cursor: pointer;
   background: #fff;
   padding: 10px 12px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: 0.2s;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  cursor: pointer;
+  border: 1px solid #eef2f8;
 }
-.menu-toggle .bar {
+.hamburger .bar {
   width: 28px;
   height: 3px;
   background: #1e2a3a;
   margin: 6px 0;
-  border-radius: 3px;
-  transition: 0.3s;
-}
-.menu-toggle:hover {
-  background: #f5f7fb;
+  border-radius: 4px;
 }
 
-/* سایدبار */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -300px;
-  width: 280px;
+  right: -320px;
+  width: 300px;
   height: 100%;
-  background: #ffffff;
-  box-shadow: -4px 0 20px rgba(0,0,0,0.05);
+  background: #fff;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.05);
   z-index: 120;
   transition: right 0.3s ease;
-  padding: 80px 24px 32px;
-  border-left: 1px solid #eef2f6;
+  padding: 80px 28px 32px;
+  border-left: 1px solid #eef2f8;
 }
 .sidebar.open {
   right: 0;
@@ -64,25 +59,31 @@ body {
   position: absolute;
   top: 20px;
   left: 24px;
-  font-size: 28px;
+  font-size: 32px;
   cursor: pointer;
-  color: #5b677b;
+  color: #7e8b9e;
 }
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
-.sidebar-link {
+.sidebar-nav a {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
   color: #1e2a3a;
   padding: 8px 0;
-  border-bottom: 1px solid #edf2f7;
-  transition: 0.2s;
+  border-bottom: 1px solid #eff3f8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.sidebar-link:hover {
+.sidebar-nav a i {
+  width: 28px;
+  color: #2c5a7a;
+}
+.sidebar-nav a:hover {
   color: #0066cc;
   padding-right: 6px;
 }
@@ -94,7 +95,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.3);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   z-index: 115;
   opacity: 0;
   visibility: hidden;
@@ -105,34 +106,30 @@ body {
   visibility: visible;
 }
 
-/* هدر */
 .main-header {
   padding: 1.2rem 0;
-  border-bottom: 1px solid #eef2f6;
+  border-bottom: 1px solid #eef2f8;
   background: white;
-}
-.header-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.9rem;
+  font-weight: 800;
   background: linear-gradient(135deg, #1e2a3a, #2c5a7a);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* بخش‌های اصلی */
+/* Hero */
 .hero {
   padding: 80px 0 60px;
   text-align: center;
 }
 h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
 }
 h1 span {
   background: linear-gradient(120deg, #1e2a3a, #2c5a7a);
@@ -141,18 +138,19 @@ h1 span {
   color: transparent;
 }
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #475569;
   max-width: 700px;
   margin: 0 auto 2rem;
 }
+
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: #1e2a3a;
   color: white;
-  padding: 0.75rem 1.75rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 40px;
   text-decoration: none;
   font-weight: 500;
@@ -168,76 +166,98 @@ h1 span {
 .btn-outline:hover {
   background: #f8fafc;
 }
-.btn:hover {
+.btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px -8px rgba(0,0,0,0.1);
 }
 
+/* خدمات */
+.services {
+  padding: 80px 0;
+  background: #f9fafc;
+}
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
 }
 .section-title h2 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
-.services {
-  padding: 80px 0;
-  background: #f9fafc;
+.section-title p {
+  color: #5b677b;
+  max-width: 580px;
+  margin: 0 auto;
 }
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
   gap: 2rem;
 }
 .service-card {
   background: white;
   padding: 2rem;
   border-radius: 28px;
-  border: 1px solid #edf2f7;
+  border: 1px solid #edf2f8;
   transition: 0.25s;
 }
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -12px rgba(0,0,0,0.06);
 }
 .service-icon {
   font-size: 2.2rem;
   color: #2c5a7a;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.portfolio {
+/* محصولات */
+.products {
   padding: 80px 0;
 }
-.portfolio-grid {
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
   gap: 2rem;
 }
-.portfolio-item {
+.product-card {
+  background: white;
   border-radius: 24px;
   border: 1px solid #eff3f8;
   overflow: hidden;
-  background: white;
+  transition: 0.2s;
 }
-.portfolio-img {
-  background: #eef2ff;
-  height: 200px;
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
+}
+.product-img {
+  background: #eef2fa;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #2c5a7a;
+  font-size: 3rem;
 }
-.portfolio-info {
+.product-info {
   padding: 1.5rem;
 }
+.product-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+.product-info p {
+  color: #5b677b;
+  font-size: 0.9rem;
+}
 
+/* درباره */
 .about {
   padding: 80px 0;
-  background: #ffffff;
-  border-top: 1px solid #f0f4f9;
-  border-bottom: 1px solid #f0f4f9;
+  background: #fff;
+  border-top: 1px solid #f0f4fa;
+  border-bottom: 1px solid #f0f4fa;
 }
 .about-inner {
   display: flex;
@@ -252,14 +272,17 @@ h1 span {
   flex: 1;
   display: flex;
   justify-content: space-around;
-  gap: 2rem;
+}
+.stat {
+  text-align: center;
 }
 .stat-number {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.3rem;
+  font-weight: 800;
   color: #1e2a3a;
 }
 
+/* تماس */
 .contact {
   padding: 80px 0;
   background: #f9fafc;
@@ -267,34 +290,48 @@ h1 span {
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
   background: white;
   border-radius: 32px;
   padding: 2rem;
-  border: 1px solid #edf2f7;
+  border: 1px solid #edf2f8;
 }
 .contact-detail {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 1rem 0;
+  margin: 1.2rem 0;
+}
+.contact-detail i {
+  width: 32px;
+  color: #2c5a7a;
 }
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
-.contact-form input, .contact-form textarea {
-  padding: 1rem;
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem 1.2rem;
   border: 1px solid #e2e8f0;
   border-radius: 32px;
   font-family: inherit;
+  font-size: 0.95rem;
 }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #1e2a3a;
+  box-shadow: 0 0 0 3px rgba(30,42,58,0.08);
+}
+
 footer {
   padding: 2rem 0;
   text-align: center;
-  border-top: 1px solid #edf2f7;
+  border-top: 1px solid #edf2f8;
   color: #7c879b;
+  font-size: 0.85rem;
 }
 
 .text-center {
@@ -306,13 +343,13 @@ footer {
     padding: 0 20px;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
-  .menu-toggle {
-    right: 20px;
+  .hamburger {
     top: 18px;
+    right: 18px;
   }
 }
