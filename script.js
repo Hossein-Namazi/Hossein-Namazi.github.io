@@ -1,8 +1,8 @@
-// منوی همبرگری (سه خط بالا سمت چپ)
-const menuToggle = document.getElementById('menuToggle');
+// منوی همبرگری و سایدبار
+const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
-const closeSidebar = document.getElementById('sidebarClose');
+const closeSidebarBtn = document.getElementById('sidebarClose');
 
 function openSidebar() {
   sidebar.classList.add('open');
@@ -10,43 +10,70 @@ function openSidebar() {
   document.body.style.overflow = 'hidden';
 }
 
-function closeSidebarFunc() {
+function closeSidebar() {
   sidebar.classList.remove('open');
   overlay.classList.remove('active');
   document.body.style.overflow = '';
 }
 
-menuToggle.addEventListener('click', openSidebar);
-closeSidebar.addEventListener('click', closeSidebarFunc);
-overlay.addEventListener('click', closeSidebarFunc);
+hamburger.addEventListener('click', openSidebar);
+closeSidebarBtn.addEventListener('click', closeSidebar);
+overlay.addEventListener('click', closeSidebar);
 
-// بستن منو با کلیک روی لینک‌های داخل سایدبار (به جز نمونه کارها که صفحه جدا می‌رود)
-document.querySelectorAll('.sidebar-link').forEach(link => {
+// بستن منو بعد از کلیک روی لینک‌های داخلی (اسکرول نرم)
+document.querySelectorAll('.sidebar-nav a').forEach(link => {
   link.addEventListener('click', function(e) {
-    if (!this.getAttribute('href').includes('portfolio.html')) {
-      closeSidebarFunc();
-    }
-  });
-});
-
-// اسکرول نرم برای لینک‌های داخلی
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-      closeSidebarFunc();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        closeSidebar();
+      }
     }
   });
 });
 
-// فرم تماس
+// اسکرول نرم برای لینک‌های هشدار در صفحه اصلی (بدون سایدبار)
+document.querySelectorAll('a[href^="#"]:not(.sidebar-nav a)').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (targetId && targetId !== '#') {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// فرم تماس: ارسال پیام از طریق ایمیل (mailto)
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('پیام شما با موفقیت دریافت شد. به زودی با شما تماس می‌گیریم.');
-    this.reset();
+    
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    
+    if (!name || !email || !message) {
+      alert('لطفاً تمام فیلدها را پر کنید.');
+      return;
+    }
+    
+    // ساخت لینک mailto
+    const subject = encodeURIComponent(`پیام از سایت Reza.A - ${name}`);
+    const body = encodeURIComponent(`نام: ${name}\nایمیل: ${email}\n\nپیام:\n${message}`);
+    const mailtoLink = `mailto:nmzhsen@gmail.com?subject=${subject}&body=${body}`;
+    
+    // باز کردن کلاینت ایمیل
+    window.location.href = mailtoLink;
+    
+    // نمایش پیغام و ریست فرم (اختیاری)
+    alert('ایمیل شما در حال باز شدن است. لطفاً آن را ارسال کنید.');
+    contactForm.reset();
   });
 }
