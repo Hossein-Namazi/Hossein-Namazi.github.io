@@ -3,29 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>نمونه کارها | Reza.A</title>
+  <title>همه محصولات | Reza.A</title>
+  <!-- favicon (آیکون تب) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c5a7a'%3E%3Cpath d='M19.14 7.5A9.94 9.94 0 0 1 21 12c0 5.52-4.48 10-10 10S1 17.52 1 12 5.48 2 11 2c1.6 0 3.12.38 4.48 1.05L13.5 5.5 17 9l2.14-1.5zM15 7.5L12 4.5 9 7.5l3 3 3-3z'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* استایل اضافی برای صفحه نمونه کارها */
-    .portfolio-page-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
+    /* استایل مخصوص صفحه محصولات (تکمیل‌کننده استایل اصلی) */
+    .page-title { text-align: center; margin: 3rem 0 1rem; }
+    .page-title h1 { font-size: 2.2rem; }
+    .product-grid-full {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+      gap: 2rem; margin: 2rem 0 4rem;
     }
-    .back-home {
-      display: inline-block;
-      margin-top: 2rem;
-      text-align: center;
-      width: 100%;
-    }
+    .back-link { text-align: center; margin-bottom: 3rem; }
   </style>
 </head>
 <body>
 
-<div class="menu-toggle" id="menuToggle">
+<div class="hamburger" id="hamburger">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
@@ -34,55 +31,45 @@
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-close" id="sidebarClose">&times;</div>
   <nav class="sidebar-nav">
-    <a href="index.html#home" class="sidebar-link">خانه</a>
-    <a href="index.html#services" class="sidebar-link">خدمات</a>
-    <a href="portfolio.html" class="sidebar-link">نمونه کارها</a>
-    <a href="index.html#about" class="sidebar-link">درباره ما</a>
-    <a href="index.html#contact" class="sidebar-link">تماس</a>
+    <a href="index.html#home"><i class="fas fa-home"></i> خانه</a>
+    <a href="index.html#services"><i class="fas fa-cogs"></i> خدمات</a>
+    <a href="products.html"><i class="fas fa-boxes"></i> همه محصولات</a>
+    <a href="index.html#about"><i class="fas fa-users"></i> درباره ما</a>
+    <a href="index.html#contact"><i class="fas fa-phone-alt"></i> تماس</a>
   </nav>
 </aside>
 <div class="overlay" id="overlay"></div>
 
 <header class="main-header">
-  <div class="container header-container">
+  <div class="container" style="display: flex; justify-content: center; align-items: center; gap: 12px;">
+    <!-- آیکون جدید چرخ‌دنده صنعتی -->
+    <i class="fas fa-cogs" style="font-size: 2rem; color: #2c5a7a;"></i>
     <div class="logo">Reza.A</div>
   </div>
 </header>
 
 <main>
-  <div class="container" style="padding-top: 40px;">
-    <div class="section-title">
-      <h2>تمام نمونه کارها</h2>
-      <p>مجموعه پروژه‌های طراحی شده توسط Reza.A</p>
+  <div class="container">
+    <div class="page-title">
+      <h1>لیست کامل اجناس و محصولات</h1>
+      <p>نمایش تمام کالاهای قابل بارگذاری (بدون قیمت و درگاه پرداخت)</p>
     </div>
-    <div class="portfolio-page-grid">
-      <div class="portfolio-item">
-        <div class="portfolio-img"><i class="fas fa-globe fa-3x"></i></div>
-        <div class="portfolio-info"><h3>سایت شرکتی مدرن</h3><p>طراحی اختصاصی با منوی کشویی</p></div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-img"><i class="fas fa-shopping-bag fa-3x"></i></div>
-        <div class="portfolio-info"><h3>نمایشگاه محصولات</h3><p>بارگذاری اجناس بدون قیمت</p></div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-img"><i class="fas fa-chalkboard-user fa-3x"></i></div>
-        <div class="portfolio-info"><h3>رزومه آنلاین</h3><p>نمایش مهارت‌ها و نمونه کارها</p></div>
-      </div>
-      <div class="portfolio-item">
-        <div class="portfolio-img"><i class="fas fa-camera-retro fa-3x"></i></div>
-        <div class="portfolio-info"><h3>گالری تصاویر</h3><p>نمایش محصولات هنری</p></div>
-      </div>
+    <div class="product-grid-full">
+      <div class="product-card"><div class="product-img"><i class="fas fa-pump-soap"></i></div><div class="product-info"><h3>پمپ پیستونی متغیر</h3><p>مدل A10VSO، فشار کاری 280bar</p></div></div>
+      <div class="product-card"><div class="product-img"><i class="fas fa-microchip"></i></div><div class="product-info"><h3>شیر تناسبی</h3><p>سری DBE، کنترل الکتروهیدرولیک</p></div></div>
+      <div class="product-card"><div class="product-img"><i class="fas fa-water"></i></div><div class="product-info"><h3>شیلنگ هیدرولیک</h3><p>دو سیم بافت، سایز 1/2 اینچ</p></div></div>
+      <div class="product-card"><div class="product-img"><i class="fas fa-filter"></i></div><div class="product-info"><h3>فیلتر تحت فشار</h3><p>مدل RFM، با نشانگر آلودگی</p></div></div>
+      <div class="product-card"><div class="product-img"><i class="fas fa-cogs"></i></div><div class="product-info"><h3>کوپلینگ هیدرولیک</h3><p>اتصال سریع، استیل ضد زنگ</p></div></div>
+      <div class="product-card"><div class="product-img"><i class="fas fa-tachometer-alt"></i></div><div class="product-info"><h3>گیج فشار</h3><p>قطر 63mm، محدوده 0-400bar</p></div></div>
+      <div class="product-card"><div class="product-img"><i class="fas fa-temperature-low"></i></div><div class="product-info"><h3>کولر روغن</h3><p>خنک‌کننده هوا ـ روغن، ظرفیت ۸ کیلووات</p></div></div>
+      <div class="product-card"><div class="product-img"><i class="fas fa-boxes"></i></div><div class="product-info"><h3>تانک هیدرولیک</h3><p>مخزن استیل ۱۰۰ لیتری به همراه بفل</p></div></div>
     </div>
-    <div class="back-home">
-      <a href="index.html" class="btn">بازگشت به صفحه اصلی</a>
-    </div>
+    <div class="back-link"><a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-right"></i> بازگشت به صفحه اصلی</a></div>
   </div>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-content"><p>© ۲۰۲۵ Reza.A — تمامی حقوق محفوظ است</p></div>
-  </div>
+  <div class="container"><p>© ۲۰۲۵ Reza.A — تمامی حقوق محفوظ است</p></div>
 </footer>
 
 <script src="script.js"></script>
